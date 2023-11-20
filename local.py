@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-from pygame import *
+import pygame
 
 # Define the dimensions of the game world
 SCREEN_WIDTH = 640
