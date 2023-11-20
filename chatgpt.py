@@ -63,7 +63,11 @@ while True:
     # Clear the screen and draw the world
     screen.fill((255, 255, 255))
     for entry in grid:
-        obj_type, (position_x, position_y) = entry
+        if isinstance(entry, int):  # Treat integers as a placeholder for landmass
+            obj_type, (position_x, position_y) = "landmass", (entry, 0)
+        else:
+            obj_type, (position_x, position_y) = entry
+
         # Draw different shapes and colors based on object type
         if obj_type == "landmass":
             pygame.draw.rect(screen, (0, 255, 0), (position_x, position_y, cell_size, cell_size))
